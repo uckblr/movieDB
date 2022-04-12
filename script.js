@@ -2,7 +2,7 @@
 // $('.search-button').on('click', function () {
 
 //     $.ajax({
-//         url: 'https://www.omdbapi.com/?apikey=dca61bcc&s=' + $('.input-keyword').val(),
+//         url: 'http://www.omdbapi.com/?apikey=dca61bcc&s=' + $('.input-keyword').val(),
 //         // ketika sukses
 //         success: result => {
 //             const movies = result.Search;
@@ -15,7 +15,7 @@
 //             // ketika tombol detail di klik
 //             $('.modal-detail-button').on('click', function () {
 //                 $.ajax({
-//                     url: 'https://www.omdbapi.com/?apikey=dca61bcc&i=' + $(this).data('imdbid'),
+//                     url: 'http://www.omdbapi.com/?apikey=dca61bcc&i=' + $(this).data('imdbid'),
 //                     success: m => {
 //                         const movieDetail = showMovieDetail(m);
 //                         $('.modal-body').html(movieDetail);
@@ -39,7 +39,7 @@
 // searchButton.addEventListener('click', function () {
 
 //     const inputKeyword = document.querySelector('.input-keyword');
-//     fetch('https://www.omdbapi.com/?apikey=dca61bcc&s=' + inputKeyword.value)
+//     fetch('http://www.omdbapi.com/?apikey=dca61bcc&s=' + inputKeyword.value)
 //         .then(response => response.json())
 //         .then(response => {
 //             const movies = response.Search;
@@ -52,7 +52,7 @@
 //             const modalDetailButton = document.querySelectorAll('.modal-detail-button');
 //             modalDetailButton.forEach(btn => {
 //                 btn.addEventListener('click', function () {
-//                     fetch('https://www.omdbapi.com/?apikey=dca61bcc&i=' + btn.dataset.imdbid)
+//                     fetch('http://www.omdbapi.com/?apikey=dca61bcc&i=' + btn.dataset.imdbid)
 //                         .then(response => response.json())
 //                         .then(response => {
 //                             const movieDetail = showMovieDetail(response);
@@ -91,7 +91,7 @@ document.addEventListener('click', async function (e) {
 
 
 function getMovieDetail(imdbid) {
-    return fetch('https://www.omdbapi.com/?apikey=dca61bcc&i=' + imdbid)
+    return fetch('http://www.omdbapi.com/?apikey=dca61bcc&i=' + imdbid)
         .then(response => response.json())
         .then(m => m);
 }
@@ -103,7 +103,7 @@ function updateUIDetail(m) {
 }
 
 function getMovies(keyword) {
-    return fetch('https://www.omdbapi.com/?apikey=dca61bcc&s=' + keyword)
+    return fetch('http://www.omdbapi.com/?apikey=dca61bcc&s=' + keyword)
         .then(response => {
             if (!response.ok) {
                 throw new Error(response.statusText);
